@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Using the Substrate node and module setup scripts · Substrate Developer Hub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;The following scripts allow you to set-up ready-to-hack Substrate runtimes node and modules.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Using the Substrate node and module setup scripts · Substrate Developer Hub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://substrate-developer-hub.github.io//docs/"/><meta property="og:description" content="&lt;p&gt;The following scripts allow you to set-up ready-to-hack Substrate runtimes node and modules.&lt;/p&gt;
+"/><meta property="og:image" content="https://substrate-developer-hub.github.io//docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://substrate-developer-hub.github.io//docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docs/img/Substrate-logo.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/Substrate-logo.svg" alt="Substrate Developer Hub"/><h2 class="headerTitleWithLogo">Substrate Developer Hub</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/docs" target="_self">Docs</a></li><li class=""><a href="/docs/tutorials" target="_self">Tutorials</a></li><li class=""><a href="https://www.parity.io/blog/" target="_self">Blog</a></li><li class=""><a href="/docs/community" target="_self">Community</a></li><li class=""><a href="https://github.com/substrate-developer-hub/" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Quick Start</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Home</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/">Docs</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Contact Us</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/contact/feedback">Feedback</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Quick Start</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/quickstart/installing-substrate">Installing Substrate</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/quickstart/using-the-substrate-node-and-module-setup-scripts">Using the Substrate node and module setup scripts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Runtime</h3><ul class=""><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Runtime Macros</h4><ul><li class="navListItem"><a class="navItem" href="/docs/docs/runtime/macros/construct_runtime">Constructing a Runtime!</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/runtime/macros/decl_module">decl_module!</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/runtime/macros/decl_storage">runtime/macros/decl_storage</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Runtime Types</h4><ul><li class="navListItem"><a class="navItem" href="/docs/docs/runtime/types/call-enum">Call Enum</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/runtime/types/event-enum">Event Enum</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/runtime/types/genesisconfig-struct">GenesisConfig Struct</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/docs/runtime/architecture-of-a-runtime">Architecture of a Runtime</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/runtime/substrate-runtime-module-library">Substrate Runtime Module Library</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Substrate Overview</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/overview/extrinsics">Extrinsics</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/overview/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/overview/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/overview/low-level-data-format">Low-level Data Format</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/overview/runtime-and-api">Runtime and API</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/overview/substrate-bonds">overview/substrate-bonds</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/overview/telemetry">Telemetry</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/overview/transaction-lifecycle">Transaction Lifecycle</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/overview/versioning">Versioning</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul class=""><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Building a Token Curated Registry DAppChain using Substrate</h4><ul><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/tcr/best-practices">Best Practices</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/tcr/building-a-ui-for-the-tcr-runtime">Building a UI for the TCR runtime</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/tcr/building-an-event-based-off-chain-storage">Building an event based off-chain storage</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/tcr/building-the-substrate-tcr-runtime">Building the Substrate TCR runtime</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/tcr/unit-testing-the-tcr-runtime-module">Unit testing the TCR runtime module</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/collator-nodes-on-polkadot-chains">tutorial/collator-nodes-on-polkadot-chains</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/creating-a-custom-substrate-chain">Creating a Custom Substrate chain</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/deploying-a-smart-contract-on-a-substrate-node-chain">Deploying a Smart Contract on a Substrate Node Chain</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/deploying-a-substrate-node-chain">Deploying a Substrate Node chain</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/governance--public--mechanism-with-a-substrate-node-chain">Governance &quot;Public&quot; Mechanism with a Substrate Node Chain</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/migrating-storage-to-a-new-substrate-node-s-runtime">Migrating Storage to a new Substrate Node&#x27;s Runtime</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/substrate-collectables-workshop">tutorial/substrate-collectables-workshop</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/substrate-runtime-recipes">Substrate Runtime Recipes</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/tutorial/validator-nodes-and-nominators-on-substrate-chains">Validator Nodes and Nominators on Substrate chains</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Using the Substrate node and module setup scripts</h1></header><article><div><span><p>The following scripts allow you to set-up ready-to-hack Substrate runtimes node and modules.
+[block:api-header]
+{
+&quot;type&quot;: &quot;basic&quot;,
+&quot;title&quot;: &quot;substrate-node-new&quot;
+}
+[/block]
+The <code>substrate-node-new</code> script downloads a compressed copy of the <a href="https://github.com/paritytech/substrate/tree/master/node-template">Substrate node template codebase</a> and compiles it. This gives you a ready-to-hack Substrate node with a template runtime module.</p>
+<p>To use the <code>substrate-node-new</code> script,</p>
+<ol>
+<li>First, install Substrate using <code>curl https://getsubstrate.io -sSf | bash</code>. This installation also adds the Substrate scripts to the system path so that you can call them from anywhere.</li>
+<li>Run <code>substrate-node-new</code> command with the following parameters,</li>
+</ol>
+<pre><code class="hljs">substrate-<span class="hljs-keyword">node</span><span class="hljs-title">-new</span> <span class="hljs-tag">&lt;node-name&gt;</span> <span class="hljs-tag">&lt;author&gt;</span>
+</code></pre>
+<p>where,</p>
+<p><code>&lt;node-name&gt;</code> is the name for your substrate runtime. This is a <em>required</em> parameter.</p>
+<p><code>&lt;author&gt;</code> is the name of the author of this node runtime. This is <em>optional</em>.</p>
+<p>Once you run the <code>substrate-node-new</code> command, it will take a few minutes (depending on your hardware) to finish compilation.</p>
+<p>[block:api-header]
+{
+&quot;title&quot;: &quot;substrate-module-new&quot;
+}
+[/block]
+Once you have your local node up and running using the <code>substrate-node-new</code> script, you can add more modules to your runtime using the <code>substrate-module-new</code> script.</p>
+<p>The <code>substrate-module-new</code> script creates a new runtime module based on a <a href="https://github.com/paritytech/substrate/blob/master/node-template/runtime/src/template.rs">template</a>. This gives you a ready-to-hack runtime module with all necessary imports, entry-points and sample tests. We recommend using this script to create new modules, specially for users who are just getting started with Substrate, as it also gives you good information on how a typical Substrate runtime module is structured.</p>
+<p>To use the <code>substrate-module-new</code> script,</p>
+<ol>
+<li>Make sure you have Substrate installed, have a local runtime created using <code>substrate-node-new</code>.</li>
+<li><code>cd</code> into the node runtime directory</li>
+<li>Run <code>substrate-module-new</code> command with the following parameters,</li>
+</ol>
+<pre><code class="hljs">substrate-<span class="hljs-class"><span class="hljs-keyword">module</span>-<span class="hljs-title">new</span> &lt;module-<span class="hljs-title">name</span>&gt; &lt;author&gt;</span>
+</code></pre>
+<p>where,</p>
+<p><code>&lt;module-name&gt;</code> is the name for your new module. This is a <em>required</em> parameter.</p>
+<p><code>&lt;author&gt;</code> is the name of the author of this module. This is <em>optional</em>.</p>
+<p>This will create a new file named <code>&lt;module-name&gt;.rs</code> inside <code>runtime/src</code> sub-directory in your node runtime directory. Make sure you add references to this module in the <code>lib.rs</code> file of your node runtime.</p>
+<p>For example, if you create a module as,</p>
+<pre><code class="hljs">substrate-<span class="hljs-keyword">module</span>-<span class="hljs-keyword">new</span> mymodule myname
+</code></pre>
+<p>Then add the following line in the <code>lib.rs</code> to have this module initialized in your runtime,</p>
+<pre><code class="hljs">mod mymodule<span class="hljs-comment">;</span>
+</code></pre>
+<p>Further, implement the module trait for your module in the <code>lib.rs</code></p>
+<pre><code class="hljs"><span class="hljs-keyword">impl</span> mymodule::Trait <span class="hljs-keyword">for</span> Runtime { 
+    <span class="hljs-comment">// add required types here</span>
+    <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-title">Event</span></span> = Event;
+}
+</code></pre>
+<p>Finally, add this module to the <code>construct_runtime</code> macro in <code>lib.rs</code>,</p>
+<pre><code class="hljs">construct_runtime!(
+    pub enum Runtime <span class="hljs-keyword">with</span> <span class="hljs-keyword">Log</span>(InternalLog: DigestItem&lt;<span class="hljs-keyword">Hash</span>, Ed25519AuthorityId&gt;) <span class="hljs-keyword">where</span>
+        <span class="hljs-keyword">Block</span> = <span class="hljs-keyword">Block</span>,
+        NodeBlock = <span class="hljs-keyword">opaque</span>::<span class="hljs-keyword">Block</span>,
+        UncheckedExtrinsic = UncheckedExtrinsic
+    {
+        <span class="hljs-keyword">System</span>: <span class="hljs-keyword">system</span>::{<span class="hljs-keyword">default</span>, <span class="hljs-keyword">Log</span>(ChangesTrieRoot)},
+        <span class="hljs-built_in">Timestamp</span>: <span class="hljs-built_in">timestamp</span>::{<span class="hljs-keyword">Module</span>, <span class="hljs-keyword">Call</span>, <span class="hljs-keyword">Storage</span>, Config&lt;T&gt;, Inherent},
+        Consensus: consensus::{<span class="hljs-keyword">Module</span>, <span class="hljs-keyword">Call</span>, <span class="hljs-keyword">Storage</span>, Config&lt;T&gt;, <span class="hljs-keyword">Log</span>(AuthoritiesChange), Inherent},
+        Aura: aura::{<span class="hljs-keyword">Module</span>},
+        <span class="hljs-keyword">Indices</span>: <span class="hljs-keyword">indices</span>,
+        Balances: balances,
+        Sudo: sudo,
+        MyModule: mymodule::{<span class="hljs-keyword">Module</span>, <span class="hljs-keyword">Call</span>, <span class="hljs-keyword">Storage</span>, <span class="hljs-keyword">Event</span>&lt;T&gt;},
+    }
+);
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/quickstart/installing-substrate"><span class="arrow-prev">← </span><span>Installing Substrate</span></a><a class="docs-next button" href="/docs/docs/runtime/macros/construct_runtime"><span>Constructing a Runtime!</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/Substrate-logo.svg" alt="Substrate Developer Hub" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docs/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docs/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Parity Technologies</section></footer></div></body></html>
