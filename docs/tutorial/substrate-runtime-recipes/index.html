@@ -144,7 +144,7 @@ You should delete the old chain before you start the new one:
 <h2><a class="anchor" aria-hidden="true" id="using-the-polkadot-ui-to-interact"></a><a href="#using-the-polkadot-ui-to-interact" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the Polkadot UI to Interact</h2>
 <p>To simplify interactions with your custom Substrate runtime, we will take advantage of the <a href="https://polkadot.js.org/apps/next/">Polkadot JS UI for Substrate</a>.</p>
 <p>By default, this UI is configured to interact with the public Substrate test-network BBQ Birch. To have it connect to your local node, simply go to:</p>
-<pre><code class="hljs">Settings &gt; remote <span class="hljs-keyword">node</span><span class="hljs-title">/endpoint</span> to connect to &gt; Local <span class="hljs-keyword">Node</span> <span class="hljs-title">(127</span>.<span class="hljs-number">0.0</span>.<span class="hljs-number">1</span>:<span class="hljs-number">9944</span>)
+<pre><code class="hljs">Settings &gt; remote node/endpoint to connect to &gt; Local Node (<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9944</span>)
 </code></pre>
 <p><img src="https://i.imgur.com/1FpB5aM.png" alt="A picture of the Polkadot UI Settings Tab"></p>
 <p>If the UI connected successfully, you should be able to go to the <strong>Explorer</strong> tab and see the block production process running.</p>
@@ -153,7 +153,7 @@ You should delete the old chain before you start the new one:
 <p><img src="https://i.imgur.com/JFXSaHw.png" alt="A picture of custom functions appearing in the Extrinsics tab"></p>
 <h3><a class="anchor" aria-hidden="true" id="viewing-storage-variables"></a><a href="#viewing-storage-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Viewing Storage Variables</h3>
 <p>If you want to check the value of a storage variable that you created, you can go to:</p>
-<pre><code class="hljs">Chain State &gt; runtimeExampleStorage &gt; (<span class="hljs-name">variable</span> name)
+<pre><code class="hljs">Chain State &gt; runtimeExampleStorage &gt; (variable name)
 </code></pre>
 <p>From there you should be able to query the state of the variable. It may return <code>&lt;unknown&gt;</code> if the value has not been set yet.</p>
 <p><img src="https://i.imgur.com/JLoWxc3.png" alt="A picture of viewing a storage variable in the Polkadot UI"></p>
@@ -162,10 +162,10 @@ You should delete the old chain before you start the new one:
 <p><img src="https://i.imgur.com/2jUtBUk.png" alt="A picture of an event getting generated in the Explorer tab"></p>
 <h3><a class="anchor" aria-hidden="true" id="wasm-runtime-upgrade"></a><a href="#wasm-runtime-upgrade" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WASM Runtime Upgrade</h3>
 <p>Rather than restarting your chain for each update, you can also do an in-place runtime upgrade using the Polkadot UI. If you do this, you will not get runtime messages appearing in your terminal, but you should be able to interact with the chain via the UI just fine. To perform the upgrade, go to:</p>
-<pre><code class="hljs">Extrinsics &gt;<span class="hljs-built_in"> Upgrade </span>Key &gt; upgrade(new)
+<pre><code class="hljs">Extrinsics &gt; Upgrade Key &gt; upgrade(new)
 </code></pre>
 <p>There, you can select the file icon and upload the wasm file generated when you run <code>./build.sh</code></p>
-<pre><code class="hljs">substrate-example<span class="hljs-regexp">/runtime/</span>wasm<span class="hljs-regexp">/target/</span>wasm32-unknown-unknown<span class="hljs-regexp">/release/</span>node_runtime.compact.wasm
+<pre><code class="hljs">substrate-example/runtime/wasm/target/wasm32-unknown-unknown/release/node_runtime.compact.wasm
 </code></pre>
 <p><img src="https://i.imgur.com/rujS3p6.png" alt="A picture of upgrading the Substrate runtime"></p>
 <p>Once the upgrade is finalized, you should be able to refresh the UI and see your updates.</p>

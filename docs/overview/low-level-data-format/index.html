@@ -130,9 +130,9 @@ A fixed number of variants, each mutually exclusive and potentially implying a f
 </ul>
 <p>Encoded as the first byte identifying the index of the variant that the value is. Any further bytes are used to encode any data that the variant implies.</p>
 <p>Example (Rust):</p>
-<pre><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">IntOrBool</span> {</span>
-  Int(u8),
-  Bool(bool),
+<pre><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">IntOrBool</span></span> {
+  Int(<span class="hljs-built_in">u8</span>),
+  Bool(<span class="hljs-built_in">bool</span>),
 }
 </code></pre>
 <ul>

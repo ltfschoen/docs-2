@@ -63,7 +63,7 @@ The <code>substrate-node-new</code> script downloads a compressed copy of the <a
 <li>First, install Substrate using <code>curl https://getsubstrate.io -sSf | bash</code>. This installation also adds the Substrate scripts to the system path so that you can call them from anywhere.</li>
 <li>Run <code>substrate-node-new</code> command with the following parameters,</li>
 </ol>
-<pre><code class="hljs">substrate-<span class="hljs-keyword">node</span><span class="hljs-title">-new</span> <span class="hljs-tag">&lt;node-name&gt;</span> <span class="hljs-tag">&lt;author&gt;</span>
+<pre><code class="hljs">substrate-node-new &lt;node-name&gt; &lt;author&gt;
 </code></pre>
 <p>where,</p>
 <p><code>&lt;node-name&gt;</code> is the name for your substrate runtime. This is a <em>required</em> parameter.</p>
@@ -82,17 +82,17 @@ Once you have your local node up and running using the <code>substrate-node-new<
 <li><code>cd</code> into the node runtime directory</li>
 <li>Run <code>substrate-module-new</code> command with the following parameters,</li>
 </ol>
-<pre><code class="hljs">substrate-<span class="hljs-class"><span class="hljs-keyword">module</span>-<span class="hljs-title">new</span> &lt;module-<span class="hljs-title">name</span>&gt; &lt;author&gt;</span>
+<pre><code class="hljs">substrate-module-new &lt;module-name&gt; &lt;author&gt;
 </code></pre>
 <p>where,</p>
 <p><code>&lt;module-name&gt;</code> is the name for your new module. This is a <em>required</em> parameter.</p>
 <p><code>&lt;author&gt;</code> is the name of the author of this module. This is <em>optional</em>.</p>
 <p>This will create a new file named <code>&lt;module-name&gt;.rs</code> inside <code>runtime/src</code> sub-directory in your node runtime directory. Make sure you add references to this module in the <code>lib.rs</code> file of your node runtime.</p>
 <p>For example, if you create a module as,</p>
-<pre><code class="hljs">substrate-<span class="hljs-keyword">module</span>-<span class="hljs-keyword">new</span> mymodule myname
+<pre><code class="hljs">substrate-module-new mymodule myname
 </code></pre>
 <p>Then add the following line in the <code>lib.rs</code> to have this module initialized in your runtime,</p>
-<pre><code class="hljs">mod mymodule<span class="hljs-comment">;</span>
+<pre><code class="hljs"><span class="hljs-keyword">mod</span> mymodule;
 </code></pre>
 <p>Further, implement the module trait for your module in the <code>lib.rs</code></p>
 <pre><code class="hljs"><span class="hljs-keyword">impl</span> mymodule::Trait <span class="hljs-keyword">for</span> Runtime { 
@@ -102,19 +102,19 @@ Once you have your local node up and running using the <code>substrate-node-new<
 </code></pre>
 <p>Finally, add this module to the <code>construct_runtime</code> macro in <code>lib.rs</code>,</p>
 <pre><code class="hljs">construct_runtime!(
-    pub enum Runtime <span class="hljs-keyword">with</span> <span class="hljs-keyword">Log</span>(InternalLog: DigestItem&lt;<span class="hljs-keyword">Hash</span>, Ed25519AuthorityId&gt;) <span class="hljs-keyword">where</span>
-        <span class="hljs-keyword">Block</span> = <span class="hljs-keyword">Block</span>,
-        NodeBlock = <span class="hljs-keyword">opaque</span>::<span class="hljs-keyword">Block</span>,
+    <span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Runtime</span></span> with Log(InternalLog: DigestItem&lt;Hash, Ed25519AuthorityId&gt;) <span class="hljs-keyword">where</span>
+        Block = Block,
+        NodeBlock = opaque::Block,
         UncheckedExtrinsic = UncheckedExtrinsic
     {
-        <span class="hljs-keyword">System</span>: <span class="hljs-keyword">system</span>::{<span class="hljs-keyword">default</span>, <span class="hljs-keyword">Log</span>(ChangesTrieRoot)},
-        <span class="hljs-built_in">Timestamp</span>: <span class="hljs-built_in">timestamp</span>::{<span class="hljs-keyword">Module</span>, <span class="hljs-keyword">Call</span>, <span class="hljs-keyword">Storage</span>, Config&lt;T&gt;, Inherent},
-        Consensus: consensus::{<span class="hljs-keyword">Module</span>, <span class="hljs-keyword">Call</span>, <span class="hljs-keyword">Storage</span>, Config&lt;T&gt;, <span class="hljs-keyword">Log</span>(AuthoritiesChange), Inherent},
-        Aura: aura::{<span class="hljs-keyword">Module</span>},
-        <span class="hljs-keyword">Indices</span>: <span class="hljs-keyword">indices</span>,
+        System: system::{<span class="hljs-keyword">default</span>, Log(ChangesTrieRoot)},
+        Timestamp: timestamp::{Module, Call, Storage, Config&lt;T&gt;, Inherent},
+        Consensus: consensus::{Module, Call, Storage, Config&lt;T&gt;, Log(AuthoritiesChange), Inherent},
+        Aura: aura::{Module},
+        Indices: indices,
         Balances: balances,
         Sudo: sudo,
-        MyModule: mymodule::{<span class="hljs-keyword">Module</span>, <span class="hljs-keyword">Call</span>, <span class="hljs-keyword">Storage</span>, <span class="hljs-keyword">Event</span>&lt;T&gt;},
+        MyModule: mymodule::{Module, Call, Storage, Event&lt;T&gt;},
     }
 );
 </code></pre>
